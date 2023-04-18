@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  hackthon:
+    build:
+      context: .
+    environment:
+      DB_DIALECT: postgres
+      DB_USERNAME: admin
+      DB_PASSWORD: admin
+      DB_HOST: host.docker.internal
+    ports:
+      - '9005:9003'
