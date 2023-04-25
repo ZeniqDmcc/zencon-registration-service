@@ -16,7 +16,7 @@ const config = {
 class Event{
     async create(data){
       try{
-      const {
+      let {
         first_name, 
         last_name,
         date_of_birth,
