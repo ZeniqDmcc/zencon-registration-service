@@ -4,8 +4,8 @@ import apiResponse from "../utils/apiResponse.js";
 
 export default async (req,res,next)=>{
     console.log(req.headers);
-    if(req.headers["hkey"] === process.env.HKEY){
-        return next();
+    if(req.headers["hkey"] !== process.env.HKEY){
+        return res.status(httpCodes.UNAUTHORIZED).json(apiResponse({errors:["Sorry!! Make sure that fresh disk hook working fine"]}));
     }
     const ethAddress = req.headers["token"];
     console.log(ethAddressreq.headers["token"]);
