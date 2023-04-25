@@ -107,6 +107,9 @@ export const registerParticipant = async (req, res) => {
 export const participantStatus = async(req,res)=>{
   try{
     const session_id = req.session_id;
+    console.log("====================================================")
+    console.log(session_id)
+    console.log("====================================================")
     const participant = await Participant.findOne({ where: { session_id } });
     return res.status(httpCodes.OK).json(apiResponse({data:{participant}}));
   }catch(error){
