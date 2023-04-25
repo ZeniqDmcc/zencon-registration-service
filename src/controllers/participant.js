@@ -89,7 +89,7 @@ export const registerParticipant = async (req, res) => {
       event_attendancy,
       session_id
     });
-    if(freshdiskResponse===500){
+    if(freshdiskResponse === 500){
       await Participant.destroy({
         where: {
           id: participant.id
@@ -100,7 +100,7 @@ export const registerParticipant = async (req, res) => {
     }
     return res.status(httpCodes.OK).json(apiResponse({data:{participant}}));
   } catch (error) {
-    console.log(error)
+    console.log(err)
     return res.status(httpCodes.INTERNAL_SERVER_ERROR).json(apiResponse({errors:[error?.errors&&error?.errors[0]?.message || error.message]}));
   }
 };
