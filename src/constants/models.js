@@ -1,3 +1,3 @@
 export const models = {
-    ZenconParticipant:"zencon_participant"
+    ZenconParticipant:"lap_zencon_participants"
 }
