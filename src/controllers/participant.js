@@ -100,6 +100,7 @@ export const registerParticipant = async (req, res) => {
     }
     return res.status(httpCodes.OK).json(apiResponse({data:{participant}}));
   } catch (error) {
+    console.log(error)
     return res.status(httpCodes.INTERNAL_SERVER_ERROR).json(apiResponse({errors:[error?.errors&&error?.errors[0]?.message || error.message]}));
   }
 };
