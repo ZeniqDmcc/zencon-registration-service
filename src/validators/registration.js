@@ -41,18 +41,18 @@ const registrationInputErrors = async({
 
         first_name: Joi.string()
             .trim()
-            .min(5)
+            .min(3)
             .max(50)
             .required(),
 
         last_name: Joi.string()
             .trim()
-            .min(5)
+            .min(3)
             .max(50)
             .required(),
 
         date_of_birth:Joi.date().less(`${year}-${month}-${day}`)
-        .required(),//.less(`${day}-${month}-${year}`),
+        .required(),
     
         phone:Joi.string()
         .trim()

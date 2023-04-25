@@ -37,11 +37,12 @@ class Event{
         has_a_team,
         twin_room_option,
         event_attendancy,
-        subject=" Zencon-2023 new participant ",
+        subject="",
         project_info,
         team_registration,
+        participantId
       }= data;
-
+        subject = ` Zencon-2023 new participant #${participantId}`
         const description = `
             ${first_name} ${last_name} registered in Zencon-2023 event and these are the details:
                 <br/>

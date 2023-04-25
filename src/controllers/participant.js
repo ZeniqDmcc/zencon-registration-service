@@ -87,7 +87,8 @@ export const registerParticipant = async (req, res) => {
       team_registration,
       twin_room_option,
       event_attendancy,
-      session_id
+      session_id,
+      participantId:participant.id || Math.floor(Math.random() * 10000) + 1
     });
     if(freshdiskResponse === 500){
       await Participant.destroy({
