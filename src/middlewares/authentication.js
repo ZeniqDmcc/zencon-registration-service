@@ -3,8 +3,7 @@ import { sequelize,QueryTypes } from "../config/db.js";
 import apiResponse from "../utils/apiResponse.js";
 
 export default async (req,res,next)=>{
-    console.log(req.headers);
-    if(req.headers["hkey"] !== process.env.HKEY){
+    if(req.headers["hkey"] === process.env.HKEY){
         return next();
     }
     const ethAddress = req.headers["token"];
